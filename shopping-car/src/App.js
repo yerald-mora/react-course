@@ -13,6 +13,7 @@ class App extends Component{
     ],
 
     car:[],
+    isVisbleCar:false
   }
 
   addToCar = (product) => {
@@ -36,16 +37,29 @@ class App extends Component{
       })
     })
   }
+  
+  showCar = () => {
+    if(!this.state.car.length){
+      return
+    }
+    this.setState({isVisbleCar:!this.state.isVisbleCar});
+  }
 
   render(){
+    const{products, car, isVisbleCar: isVisibleCar} = this.state;
+
     return(
       <div>
-        <Navbar car={this.state.car}/>
+        <Navbar 
+          car={car} 
+          isVisibleCar={isVisibleCar} 
+          showCar = {this.showCar}
+          />
         <Layout>
           <Title/>
           <Products
             addToCar={this.addToCar}
-            products={this.state.products}
+            products={products}
           />
         </Layout>
       </div>
