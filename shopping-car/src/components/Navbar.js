@@ -1,4 +1,6 @@
 import { Component } from "react";
+import Logo from './Logo'
+import Car from './Car'
 
 const styles ={
     navbar:{
@@ -16,8 +18,8 @@ class Navbar extends Component{
     render(){
         return(
             <nav style={styles.navbar}>
-                <p>Logo</p>
-                <p>Car</p>
+                <Logo/>
+                <Car/>
             </nav>
         )
     }
