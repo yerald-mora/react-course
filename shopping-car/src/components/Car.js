@@ -19,10 +19,14 @@ const styles = {
 
 class Car extends Component{
     render(){
+        const {car} = this.props;
+        const quantity = car.reduce((acc,el) => acc + el.quantity,0);
+        const showBubble = (quantity!==0)
+
         return(
             <div>
                 <span style={styles.bubble}>
-                    <BubbleAlert/>    
+                    {showBubble ? <BubbleAlert value={quantity}/> : null}
                 </span>
                 <button style={styles.car}>
                     Car
