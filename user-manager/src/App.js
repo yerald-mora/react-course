@@ -1,4 +1,5 @@
 import useForm from './Hooks/UseForm'
+import Input from './Components/Input'
 
 function App(){
   const[form,handleChange] = useForm({name:''})
@@ -7,7 +8,7 @@ function App(){
 
   return(
     <form>
-      <input name='name' placeholder='Name' value={form.name} onChange={handleChange}/>
+      <Input label='Name' name='name' placeholder='Name' value={form.name} onChange={handleChange}/>
     </form>
   )
 }
