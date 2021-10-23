@@ -1,5 +1,6 @@
 import useForm from './Hooks/UseForm'
 import Input from './Components/Input'
+import Card from './Components/Card'
 
 function App(){
   const[form,handleChange] = useForm({name:'', lastName:''})
@@ -7,10 +8,12 @@ function App(){
   console.log(form);
 
   return(
-    <form>
-      <Input label='Name' name='name' placeholder='Name' value={form.name} onChange={handleChange}/>
-      <Input label='Last Name' name='lastName' placeholder='Last Name' value={form.name} onChange={handleChange}/>
-    </form>
+    <Card>
+      <form>
+        <Input label='Name' name='name' placeholder='Name' value={form.name} onChange={handleChange}/>
+        <Input label='Last Name' name='lastName' placeholder='Last Name' value={form.name} onChange={handleChange}/>
+      </form>
+    </Card>
   )
 }
 
