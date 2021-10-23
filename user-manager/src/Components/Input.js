@@ -1,6 +1,8 @@
+import './Input.css'
+
 const Input = ({label,...props}) => {
     return(
-        <div>
+        <div className="field">
             <label>{label}</label>
             <input {...props}/>
         </div>
